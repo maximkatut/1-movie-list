@@ -13,10 +13,12 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: '/node-modules',
-        use: {
-          loader: 'babel-loader'
-        },
+        use: ['babel-loader', 'eslint-loader']
       },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'] 
+      }
     ],
   },
   plugins: [
